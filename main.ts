@@ -1,0 +1,10 @@
+MCP23017.setPortAsOutput(SET_PORT.B)
+MCP23017.setupSimplePulsingOnAddress(ADDRESS.A20)
+basic.forever(function () {
+    MCP23017.setOutputB(0)
+    basic.pause(100)
+    MCP23017.updateOutputB()
+    MCP23017.clearOutputB(0)
+    basic.pause(100)
+    MCP23017.updateOutputB()
+})
